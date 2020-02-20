@@ -7,17 +7,13 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network" {
-  name = "terraform-jsp-network"
+  name = "terraform-jsp-network-by-tfe"
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-jsp-instance"
+  name         = "terraform-jsp-instance-by-tfe"
   machine_type = var.machine_types[var.environment]
   tags         = ["web", "dev"]
-
-  provisioner "local-exec" {
-    command  = "echo ${google_compute_instance.vm_instance.name}: ${google_compute_instance.vm_instance.network_interface[0].access_config[0].nat_ip} >> ip_address.txt"
-  }
 
   boot_disk {
     initialize_params {
@@ -34,11 +30,11 @@ resource "google_compute_instance" "vm_instance" {
 }
 
 resource "google_compute_address" "vm_static_ip" {
-  name  = "tf-jsp-static-ip"
+  name  = "tf-jsp-static-ip-by-tfe"
 }
 
 resource "google_storage_bucket" "example_bucket" {
-  name  = "tf-example-bucket-jsp-20200219"
+  name  = "tf-example-bucket-jsp-20200220"
   location = "ASIA"
 
   website {
@@ -50,7 +46,7 @@ resource "google_storage_bucket" "example_bucket" {
 resource "google_compute_instance" "another_instance" {
   depends_on = [google_storage_bucket.example_bucket]
   
-  name         = "tf-instance-2"
+  name         = "tf-instance-2-by-tfe"
   machine_type = "f1-micro"
 
   boot_disk {

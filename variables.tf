@@ -19,13 +19,11 @@ variable "cidrs" {
 
 
 # Path is relative to the location where terraform is running.
-#variable "credentials_file" {
+variable "credentials_file" {
   # default = "hc-gcp.json"
 
-#}
+}
 
-variable "account_key" {
-  }
 
 variable "region" {
   default = "asia-northeast3"

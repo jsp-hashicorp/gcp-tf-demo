@@ -21,7 +21,7 @@ variable "cidrs" {
 # Path is relative to the location where terraform is running.
 variable "service_account_key" {
   # default = "hc-gcp.json"
-  default = "94d796ce3b586fd29574990855f179bcc263cfc2"
+  type = string
 
 }
 

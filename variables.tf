@@ -22,7 +22,6 @@ variable "cidrs" {
 variable "service_account_key" {
   # default = "hc-gcp.json"
   type = string
-
 }
 
 

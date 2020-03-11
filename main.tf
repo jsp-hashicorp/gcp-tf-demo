@@ -1,10 +1,10 @@
 provider "google" {
   #credentials = file(var.credentials_file)
-  #credentials = var.service_account_key
+  
   project = var.project
   region  = var.region
   zone    = var.zone
-  service_account_key = var.service_account_key
+  credentials = var.service_account_key
 
 }
 

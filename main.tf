@@ -15,7 +15,7 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-jsp-instance-by-tfe"
   machine_type = var.machine_types[var.environment]
-  tags         = ["web", "dev","prod"]
+  tags         = ["web", "dev"]
 
   boot_disk {
     initialize_params {

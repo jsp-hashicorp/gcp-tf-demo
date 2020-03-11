@@ -20,8 +20,8 @@ variable "cidrs" {
 
 # Path is relative to the location where terraform is running.
 variable "credentials_file" {
-  # default = "/Users/junspark/code/playground/tf-gcp/hc-jsp-gcp-test-94d796ce3b58.json"
-  default = "hc-jsp-gcp-test-94d796ce3b58.json"
+  # default = "hc-gcp.json"
+
 }
 
 

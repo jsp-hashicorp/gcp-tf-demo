@@ -1,10 +1,10 @@
 provider "google" {
- # credentials = file(var.credentials_file)
+  credentials = file(var.credentials_file)
 
   project = var.project
   region  = var.region
   zone    = var.zone
-  service_account_key = var.account_key
+#  service_account_key = var.account_key
 }
 
 resource "google_compute_network" "vpc_network" {

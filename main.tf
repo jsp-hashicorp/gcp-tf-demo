@@ -49,8 +49,7 @@ resource "google_compute_instance" "another_instance" {
   depends_on = [google_storage_bucket.example_bucket]
   
   name         = "tf-instance-2-by-tfe"
-  machine_type = "f1-micro"
-
+  machine_type = "n1-standard-2"
   boot_disk {
     initialize_params {
       image = "cos-cloud/cos-stable"
